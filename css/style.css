@@ -1,0 +1,73 @@
+/*
+* Application Name: Awesome LoginForm
+* Folder Path: /css
+* File Name: style.css
+*
+* Tags, classes and id's (in this order). Sorted alphabetically.
+* Same procedure for @media queries.
+*/
+
+body{font-family: 'Montserrat', sans-serif;background-image: url("../img/backGround/main.png");height: 100%;background-position: center;background-repeat: no-repeat;background-size: cover;}
+.white-Box{position: relative;background-color: #fff;border-radius: 5px;width: 100%;}
+.black-Box{position: relative;background-color: #161b22;border-radius: 5px;width: 100%;}
+.logo{display: block;margin-left: auto;margin-right: auto;width: 15%;}
+.form-Box{padding-left: 5%;padding-right: 5%;padding-bottom: 5%;}
+.bttn-non-style{background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;}
+.dark-mode-img{width: 25%;float: left;}
+.center{text-align: center;}
+.bttn-lng{width: 35%;}
+.lang-flags{width: 100%;transition: opacity 0.5s linear;opacity: 0;}
+.flags{display: inline-block;margin-left: 5%;}
+.bttn-full{width: 100%;}
+.frgt-Pass{float: left;}
+.crt-Acc{float: right;}
+.copyright{height: 35px;text-align: center;}
+
+.hidden{opacity: 1;}
+.visuallyhidden{opacity: 1;}
+
+
+
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width: 576px) {
+    body{background-image: none;}
+    .white-Box{padding: 5%;}
+    .black-Box{padding: 5%;}
+    .span-txt{font-size: .875em;}
+    .flags{width: 25%;height: auto;}
+}
+
+/* Small devices (portrait tablets and large phones, 576px and up) */
+@media only screen and (min-width: 576px) {
+    .white-Box{padding: 5%;}
+    .black-Box{padding: 5%;}
+    .span-txt{font-size: .825em;}
+    .flags{width: 24%;height: auto;}
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .white-Box{top: 5%;padding: 5%;}
+    .black-Box{top: 5%;padding: 5%;}
+    .flags{width: 24%;height: auto;}
+    
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .white-Box{top: 20%;padding: 5%;}
+    .black-Box{top: 20%;padding: 5%;}
+    .dark-mode-img{width: 40%;}
+    .bttn-lng{width: 50%;}
+    .span-txt{font-size: .690em;}
+    .flags{width: 23%;height: auto;}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .dark-mode-img{width: 25%;}
+    .bttn-lng{width: 35%;}
+    .span-txt{font-size: .875em;}
+    .flags{width: 25%;height: auto;}
+}

@@ -1,3 +1,17 @@
+<?php
+/*
+ * Application Name: 360 ERP Login Form Module
+ * Folder Path: /
+ * File Name: index.php
+ *
+ * 
+ */
+
+ // Include authenticate user file
+require_once "gta_userauth.php";
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,9 +33,9 @@
 
     <title>Awesome LoginForm</title>
   </head>
-  <body onload="hi(); check_Cookies();">
+  <body onload="erp_login_module_onload_content()">
     <div class="container">
-        <div class="row">
+        <div class="row screen-phone">
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                 <div class="white-Box default-Box" id="parent-Box">
                     <img class="logo" 
@@ -33,14 +47,15 @@
                                 <button class="bttn-non-style" 
                                         id="bttn-dark-mode" 
                                         type="button" 
-                                        onclick="DarkSide();">
+                                        onclick="erp_login_module_set_mode()">
                                         <img class="dark-mode-img"
-                                                id="dark-mode-moon" 
+                                                id="dl-mode-img" 
                                                 src="img/darkmode/darkside-moon-dark.png"></button>
                                 <span class="span-txt"
                                         id="txt-mode"></span>
                             </div>
-                            <div class="col"><h4 class="center">Login</h4></div>
+                            <div class="col">
+                                <h4 class="center" id="lgn-title"></h4></div>
                             <div class="col center">
                                 <button class="bttn-non-style" 
                                         id="bttn-flags" 
@@ -56,49 +71,64 @@
                                 <a class="link-flag"    
                                     role="button"
                                     data-value="lg_GB"
-                                    onclick="set_Cookies('coo_Language', 'lg_GB', 365); set_Language(this);">
+                                    onclick="erp_login_module_set_cookies('coo_Language', 'lg_GB', 365); erp_login_module_set_language(this)">
                                     <img class="flags" 
                                         src="img/flags/uk_flag.png"></a>
                                 <a class="link-flag"    
                                     role="button"
                                     data-value="lg_CA"
-                                    onclick="set_Cookies('coo_Language', 'lg_CA', 365); set_Language(this);">
+                                    onclick="erp_login_module_set_cookies('coo_Language', 'lg_CA', 365); erp_login_module_set_language(this)">
                                     <img class="flags" 
                                         src="img/flags/cat_flag.png"></a>
                                 <a class="link-flag"    
                                     role="button"
                                     data-value="lg_ES"
-                                    onclick="set_Cookies('coo_Language', 'lg_ES', 365); set_Language(this);">
+                                    onclick="erp_login_module_set_cookies('coo_Language', 'lg_ES', 365); erp_login_module_set_language(this)">
                                     <img class="flags" 
                                         src="img/flags/esp_flag.png"></a>
                             </div>
                         </div>
-                        <form>
-                        <div class="mb-3">
-                            <label for="InputEmail" class="form-label">Email address</label>
-                            <input type="email" 
-                                    class="form-control" 
-                                    id="InputEmail" 
-                                    aria-describedby="emailHelp"
-                                    autocomplete="email">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="InputPassword" class="form-label">Password</label>
-                            <input type="password" 
-                                    class="form-control" 
-                                    id="InputPassword"
-                                    autocomplete="current-password">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" 
-                                    class="form-check-input" 
-                                    id="Check">
-                            <label class="form-check-label" for="Check">Check me out</label>
-                        </div>
-                        <button type="submit" 
-                                class="btn btn-primary bttn-full"
-                                id="btt-phoenix-form">Submit</button>
+                        <form action="gta_userauth.php" method="POST">
+                            <div class="mb-3">
+                                <label for="InputEmail" 
+                                        class="form-label"
+                                        id="InputEmailLabel"></label>
+                                <input type="email"
+                                        name="email" 
+                                        class="form-control" 
+                                        id="InputEmail" 
+                                        autocomplete="email"
+                                        required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="InputPassword" 
+                                        class="form-label"
+                                        id="InputPasswordLabel"></label>
+                                <input type="password"
+                                        name="password" 
+                                        class="form-control" 
+                                        id="InputPassword"
+                                        aria-describedby="passwordHelp"
+                                        autocomplete="current-password"
+                                        required>
+                                <div class="form-text"
+                                    id="passwordHelp"></div>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox"
+                                        name="rememberme"
+                                        class="form-check-input" 
+                                        id="CheckMeIn"
+                                        onclick="erp_login_module_cookies_checkbox_value(this);">
+                                <label for="CheckMeIn" 
+                                        class="form-check-label" 
+                                        id="CheckMeInLabel"></label>
+                            </div>
+                            <button type="submit"
+                                    name="submit"
+                                    value="Submit" 
+                                    class="btn btn-dark bttn-full"
+                                    id="PhoenixLFSubmit">&nbsp;</button>
                         </form>
                     </div><hr>
                     <div class="container">
@@ -106,17 +136,18 @@
                             <div class="col">
                                 <a class="frgt-Pass link-primary"
                                     id="frgt-Pass" 
-                                    href="">Forgot password?</a></div>
+                                    href="#"></a></div>
                             <div class="col">
                                 <a class="crt-Acc link-primary"
                                     id="crt-Acc" 
-                                    href="">Create account</a></div>
+                                    href="#"></a></div>
                         </div>
                     </div><hr>
                     <div class="container">
                         <div class="row">
                         <div class="row copyright">
-                            <div class="col" id="copyright">&copy; Powered by Phoenix Ind. (2022)</div>
+                            <div class="col" 
+                                 id="copyright"></div>
                         </div>
                         </div>
                     </div>
@@ -128,8 +159,9 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
-    <!-- Custom JavaScript -->
+    <!-- Custom JavaScript -->    
     <script src="js/scripts.js"></script>
+    
 
   </body>
 </html>

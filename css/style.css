@@ -1,11 +1,10 @@
 /*
-* Application Name: Awesome LoginForm
-* Folder Path: /css
-* File Name: style.css
-*
-* Tags, classes and id's (in this order). Sorted alphabetically.
-* Same procedure for @media queries.
-*/
+ * Application Name: 360 ERP Login Form Module
+ * Folder Path: /css/
+ * File Name: style.css
+ *
+ * 
+ */
 
 body{font-family: 'Montserrat', sans-serif;background-image: url("../img/backGround/main.png");height: 100%;background-position: center;background-repeat: no-repeat;background-size: cover;}
 .white-Box{position: relative;background-color: #fff;border-radius: 5px;width: 100%;}
@@ -21,8 +20,7 @@ body{font-family: 'Montserrat', sans-serif;background-image: url("../img/backGro
 .bttn-full{width: 100%;}
 .frgt-Pass{float: left;}
 .crt-Acc{float: right;}
-.copyright{height: 35px;text-align: center;}
-
+.copyright{height: 35px;text-align: center;font-weight: bold;}
 .hidden{opacity: 1;}
 .visuallyhidden{opacity: 1;}
 
@@ -35,6 +33,8 @@ body{font-family: 'Montserrat', sans-serif;background-image: url("../img/backGro
     .black-Box{padding: 5%;}
     .span-txt{font-size: .875em;}
     .flags{width: 25%;height: auto;}
+    .link-primary,
+    .link-info{font-size: .875em;}
 }
 
 /* Small devices (portrait tablets and large phones, 576px and up) */
@@ -43,6 +43,8 @@ body{font-family: 'Montserrat', sans-serif;background-image: url("../img/backGro
     .black-Box{padding: 5%;}
     .span-txt{font-size: .825em;}
     .flags{width: 24%;height: auto;}
+    .link-primary,
+    .link-info{font-size: .825em;}
     
 }
 
@@ -56,12 +58,14 @@ body{font-family: 'Montserrat', sans-serif;background-image: url("../img/backGro
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    .white-Box{top: 20%;padding: 5%;}
-    .black-Box{top: 20%;padding: 5%;}
+    .white-Box{top: 10%;padding: 5%;}
+    .black-Box{top: 10%;padding: 5%;}
     .dark-mode-img{width: 40%;}
     .bttn-lng{width: 50%;}
     .span-txt{font-size: .690em;}
     .flags{width: 23%;height: auto;}
+    .link-primary,
+    .link-info{font-size: .690em;}
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -70,4 +74,6 @@ body{font-family: 'Montserrat', sans-serif;background-image: url("../img/backGro
     .bttn-lng{width: 35%;}
     .span-txt{font-size: .875em;}
     .flags{width: 25%;height: auto;}
+    .link-primary,
+    .link-info{font-size: .875em;}
 }

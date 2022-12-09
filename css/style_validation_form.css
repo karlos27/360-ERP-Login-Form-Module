@@ -1,0 +1,16 @@
+/*
+ * Application Name: 360 ERP Login Form Module
+ * Version: 1.0
+ * Folder Path: /css/
+ * File Name: style_validation_form.css
+ *
+ * 
+ */
+  
+input[type="email"] {appearance: none;}
+/*** Invalid fields ***/
+input:focus:invalid{outline: none;}
+/**** Error messages ***/
+.error{width: 100%;padding: 0;font-size: 80%;color: #ff0000;font-weight: bold; border-radius: 3px;box-sizing: border-box;}
+.error.active{padding: 0.3em;}
+  

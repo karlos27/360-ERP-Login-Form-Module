@@ -1,0 +1,57 @@
+/*
+ * Application Name: 360 ERP Login Form Module
+ * Version: 1.0
+ * Folder Path: /css/
+ * File Name: style_login.css
+ * Resources:
+ * https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_buttons_animate1
+ *
+ * 
+ */
+#erp-register-form{display: none;}
+.second-level-Box{width: 100%;height: 660px;position: relative;border-bottom-right-radius: 5px;border-top-right-radius: 5px;animation: 0.5s linear forwards;}
+.white-Boxes {background-color: #fff;}
+.black-Boxes{background-color: #161b22;}
+/*Button Open Register Form*/
+.btn-custom-next{border-radius: 4px;transition: all 0.5s;cursor: pointer;}
+.btn-custom-next span{cursor: pointer;display: inline-block;position: relative;transition: 0.5s;}
+.btn-custom-next span:after{content: '\00bb';position: absolute;opacity: 0;top: 0;right: -20px;transition: 0.5s;}
+.btn-custom-next span{padding-right: 25px;}
+.btn-custom-next:hover span:after{opacity: 1;right: 0;}
+/*Modal Button*/
+.password-input-control,
+.tools-btt,
+.tools-img{display: inline-block;}
+.password-input-control{width: 88%;height: auto;}
+.tools-img,
+.tools-img:active, 
+.tools-img:focus{outline: none !important;box-shadow: none;padding: 0;}
+.tools-btt{width: 11%;height: auto;float:right;}
+.img-tools{width: 100%;height: auto;}
+
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width: 576px) {
+    .first-level-Box{border-bottom-left-radius: 0px;border-bottom-right-radius: 0px;}
+    .second-level-Box{padding: 5%;border-top-left-radius: 0px;border-top-right-radius: 0px;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;}
+}
+/* Small devices (portrait tablets and large phones, 576px and up) */
+@media only screen and (min-width: 576px) {
+    .second-level-Box{padding: 5%;}
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .second-level-Box{top: 5%;padding: 5%;left: -320px;}
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .second-level-Box{top: 10%;padding: 5%;left: -400px;animation-name: rg-open-transition-laptop;}
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .second-level-Box{z-index: auto;top: 10%;padding: 5%;left: -440px;animation-name: rg-open-transition-laptop;}
+}
+
+@keyframes rg-open-transition-laptop {
+    0%   {left:-440px;}
+    100% {left:-30px;}
+}
